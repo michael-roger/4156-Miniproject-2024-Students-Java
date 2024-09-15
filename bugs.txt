@@ -29,6 +29,46 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/Departmen
 
 5. toString() failed to return result.toString()
 
+6. courses class variable used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+7. courses class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+8. departmentChair class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+9. deptCode class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+10. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
 
 
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/IndividualProjectApplication.java
+
+1. Indentation fixed on file
+
+2. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/MyFileDatabase.java
+
+1. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+2. setMapping() parameter "mapping" used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+3. deSerializeObjectFromFile() return type used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+3. deSerializeObjectFromFile() variable "obj" used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+4. deSerializeObjectFromFile() returned null instead of empty collection
+    (PMD Rule: ReturnEmptyCollectionRatherThanNull)
+
+5. getDepartmentMapping() return type used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+6. filepath class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+7. departmentMapping class variable used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
 

@@ -12,8 +12,8 @@ import java.util.Map;
 public class MyFileDatabase {
 
   /**
-   * Constructs a MyFileDatabase object and loads up the data structure with the contents of the
-   * file.
+   * Constructs a MyFileDatabase object and loads up the data structure with
+   * the contents of the file.
    *
    * @param flag used to distinguish mode of database
    * @param filePath the path to the file containing the entries of the database
