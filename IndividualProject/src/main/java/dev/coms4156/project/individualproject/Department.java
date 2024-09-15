@@ -1,5 +1,6 @@
 package dev.coms4156.project.individualproject;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Map;
 
@@ -8,11 +9,6 @@ import java.util.Map;
  * the department, including its code, courses offered, department chair, and number of majors.
  */
 public class Department implements Serializable {
-
-  private final Map<String, Course> courses;
-  private final String departmentChair;
-  private final String deptCode;
-  private int numberOfMajors;
 
   /**
    * Constructs a new Department object with the given parameters.
@@ -120,4 +116,11 @@ public class Department implements Serializable {
     }
     return result.toString();
   }
+
+  @Serial
+  private static final long serialVersionUID = 234567L;
+  private final Map<String, Course> courses;
+  private final String departmentChair;
+  private final String deptCode;
+  private int numberOfMajors;
 }

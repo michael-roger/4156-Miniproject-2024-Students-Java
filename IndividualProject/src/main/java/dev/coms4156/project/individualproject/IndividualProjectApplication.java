@@ -17,10 +17,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class IndividualProjectApplication implements CommandLineRunner {
 
-  // Database Instance
-  public static MyFileDatabase myFileDatabase;
-  private static boolean saveData = true;
-
   /**
    * The main launcher for the service all it does is make a call to the overridden run method.
    *
@@ -295,4 +291,8 @@ public class IndividualProjectApplication implements CommandLineRunner {
       myFileDatabase.saveContentsToFile();
     }
   }
+
+  // Database Instance
+  public static MyFileDatabase myFileDatabase;
+  private static boolean saveData = true;
 }

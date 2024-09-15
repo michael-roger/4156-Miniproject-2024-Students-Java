@@ -1,5 +1,6 @@
 package dev.coms4156.project.individualproject;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -8,12 +9,6 @@ import java.io.Serializable;
  * instructor name, and the number of enrolled students.
  */
 public class Course implements Serializable {
-
-  private final int enrollmentCapacity;
-  private int enrolledStudentCount;
-  private String courseLocation;
-  private String instructorName;
-  private String courseTimeSlot;
 
   /**
    * Constructs a new Course object with the given parameters. Initial count starts at 0.
@@ -95,4 +90,12 @@ public class Course implements Serializable {
   public boolean isCourseFull() {
     return enrollmentCapacity > enrolledStudentCount;
   }
+
+  @Serial
+  private static final long serialVersionUID = 123456L;
+  private final int enrollmentCapacity;
+  private int enrolledStudentCount;
+  private String courseLocation;
+  private String instructorName;
+  private String courseTimeSlot;
 }

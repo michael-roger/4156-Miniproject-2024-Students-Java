@@ -11,12 +11,6 @@ import java.util.Map;
 /** This class represents a file-based database containing department mappings. */
 public class MyFileDatabase {
 
-  /** The path to the file containing the database entries. */
-  private final String filePath;
-
-  /** The mapping of department names to Department objects. */
-  private Map<String, Department> departmentMapping;
-
   /**
    * Constructs a MyFileDatabase object and loads up the data structure with the contents of the
    * file.
@@ -96,4 +90,10 @@ public class MyFileDatabase {
     }
     return result.toString();
   }
+
+  /** The path to the file containing the database entries. */
+  private final String filePath;
+
+  /** The mapping of department names to Department objects. */
+  private Map<String, Department> departmentMapping;
 }

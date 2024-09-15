@@ -1,4 +1,34 @@
-Department.java
-Line #107: Missing @Override statement
-PMD Rule: MissingOverride
+.gitignore
+Didn't have a single blank line at the end of the file
+
+
+IndividualProject/pom.xml
+Indentation was incorrect
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/Course.java
+1. enrollStudent() always returned false
+
+2. toString() was missing the @Override annotation (PMD Rule: MissingOverride)
+
+3. Missing JavaDoc for class (CheckStyle Rule: CommentRequired)
+
+4. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/Department.java
+1. Missing @Override statement on toString() (PMD Rule: MissingOverride)
+
+2. getDepartmentChair() did not return value of class variable
+
+3. getCourseSelection() had return type of HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+4. Department() arguments used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+5. toString() failed to return result.toString()
+
+
+
 
