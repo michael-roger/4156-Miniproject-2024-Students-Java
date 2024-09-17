@@ -7,7 +7,7 @@ Indentation was incorrect
 
 
 IndividualProject/src/main/java/dev/coms4156/project/individualproject/Course.java
-1. enrollStudent() always returned false
+1. enrollStudent() always returned false - updated to check to see if course is full first
 
 2. toString() was missing the @Override annotation (PMD Rule: MissingOverride)
 
@@ -16,6 +16,8 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/Course.ja
 4. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
 
 5. Reformatted all JavaDocs using Google Java code style rules
+
+6. isCourseFull() logic was backwards!  Updated to be functional.
 
 
 IndividualProject/src/main/java/dev/coms4156/project/individualproject/Department.java
@@ -43,6 +45,16 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/Departmen
 10. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
 
 11. Reformatted all JavaDocs using Google Java code style rules
+
+12. Reformatted constructor to abide by Google Java code style rules
+
+13. getNumberOfMajors() had an erroneous minus sign in it!
+
+14. dropPersonFromMajor() needed to check if the number of majors is positive
+
+15. Reformatted createCourse() parameters to abide by Google Java code style rules
+
+16. Reformatted toString() to abide by Google Java code style rules.
 
 
 IndividualProject/src/main/java/dev/coms4156/project/individualproject/IndividualProjectApplication.java
@@ -182,6 +194,7 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/RouteCont
 
 26. Added missing blank line to the end of file
 
+27. Remove erroneous minus sign from getMajorCtFromDepartment.
 
 IndividualProject/src/test/java/dev/coms4156/project/individualproject/CourseUnitTests.java
 
