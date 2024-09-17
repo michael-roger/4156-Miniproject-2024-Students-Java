@@ -1,0 +1,203 @@
+.gitignore
+Didn't have a single blank line at the end of the file
+
+
+IndividualProject/pom.xml
+Indentation was incorrect
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/Course.java
+1. enrollStudent() always returned false - updated to check to see if course is full first
+
+2. toString() was missing the @Override annotation (PMD Rule: MissingOverride)
+
+3. Missing JavaDoc for class (CheckStyle Rule: CommentRequired)
+
+4. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+5. Reformatted all JavaDocs using Google Java code style rules
+
+6. isCourseFull() logic was backwards!  Updated to be functional.
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/Department.java
+1. Missing @Override statement on toString() (PMD Rule: MissingOverride)
+
+2. getDepartmentChair() did not return value of class variable
+
+3. getCourseSelection() had return type of HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+4. Department() arguments used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+5. toString() failed to return result.toString()
+
+6. courses class variable used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+7. courses class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+8. departmentChair class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+9. deptCode class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+10. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+11. Reformatted all JavaDocs using Google Java code style rules
+
+12. Reformatted constructor to abide by Google Java code style rules
+
+13. getNumberOfMajors() had an erroneous minus sign in it!
+
+14. dropPersonFromMajor() needed to check if the number of majors is positive
+
+15. Reformatted createCourse() parameters to abide by Google Java code style rules
+
+16. Reformatted toString() to abide by Google Java code style rules.
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/IndividualProjectApplication.java
+
+1. Indentation fixed on file using Google Java code style rules
+
+2. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+3. Reformatted all JavaDocs using Google Java code style rules
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/MyFileDatabase.java
+
+1. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+2. setMapping() parameter "mapping" used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+3. deSerializeObjectFromFile() return type used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+3. deSerializeObjectFromFile() variable "obj" used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+4. deSerializeObjectFromFile() returned null instead of empty collection
+    (PMD Rule: ReturnEmptyCollectionRatherThanNull)
+
+5. getDepartmentMapping() return type used HashMap (implementation)
+    instead of Map (interface) (PMD Rule: LooseCoupling)
+
+6. filepath class variable changed to be final (CheckStyle Rule: FinalLocalVariable)
+
+7. departmentMapping class variable used HashMap (implementation)
+ instead of Map (interface) (PMD Rule: LooseCoupling)
+
+8. Reformatted all JavaDocs using Google Java code style rules
+
+
+IndividualProject/src/main/java/dev/coms4156/project/individualproject/RouteController.java
+
+1. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
+
+2. Use text block instead of concatenated strings.  (IntelliJ suggestion)
+
+3. Updated all annotations that used 'value = ' when it was the only argument in
+    the annotation.  (PMD Rule: UnnecessaryAnnotationValueElement)
+
+4. retrieveDepartment() variable "departmentMapping" used HashMap (implementation)
+       instead of Map (interface) (PMD Rule: LooseCoupling)
+
+5. Added "Locale.ENGLISH" when using toUpperCase on deptCode variable in retrieveDepartment()
+    (PMD Rule: UseLocaleWithCaseConversions)
+
+6. Instead of returning HttpStatus.OK, we should return HttpStatus.NOT_FOUND
+    when the department is not found in retrieveDepartment()
+
+7. Instead of returning HttpStatus.NOT_FOUND, we should return HttpStatus.OK when
+    the department is found in retrieveDepartment()
+
+8. Reformatted all JavaDocs using Google Java code style rules
+
+9. retrieveCourse() variable "departmentMapping" used HashMap (implementation)
+          instead of Map (interface) (PMD Rule: LooseCoupling)
+
+10. retrieveCourse() variable "coursesMapping" used HashMap (implementation)
+              instead of Map (interface) (PMD Rule: LooseCoupling)
+
+11. Instead of returning HttpStatus.FORBIDDEN, we should return HttpStatus.OK
+     when the course is found in retrieveCourse().
+
+12. isCourseFull() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+13. isCourseFull() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+14. getMajorCtFromDept() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+15. getMajorCtFromDept() should return HttpStatus.NOT_FOUND when
+     department cannot be found.
+
+14. identifyDeptChair() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+15. findCourseLocation() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+16. findCourseLocation() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+17. findCourseLocation() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+18. findCourseLocation() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+19. findCourseTime() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+20. findCourseTime() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+21. addMajorToDept() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+22. removeMajorFromDept() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+23. dropStudent() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+24. dropStudent() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+25. Added missing JavaDoc to setEnrollmentCount() (CheckStyle Rule: MissingJavadocMethod)
+
+26. setEnrollmentCount() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+27. setEnrollmentCount() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+28. changeCourseTime() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+29. changeCourseTime() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+30. changeCourseTeacher() variable "departmentMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+31. changeCourseTeacher() variable "coursesMapping" used HashMap (implementation)
+     instead of Map (interface) (PMD Rule: LooseCoupling)
+
+25. Added missing JavaDoc to changeCourseLocation() (CheckStyle Rule: MissingJavadocMethod)
+
+26. Added missing blank line to the end of file
+
+27. Remove erroneous minus sign from getMajorCtFromDepartment.
+
+IndividualProject/src/test/java/dev/coms4156/project/individualproject/CourseUnitTests.java
+
+1. Added missing JavaDoc to class (CheckStyle Rule: MissingJavadocMethod)
+
+
