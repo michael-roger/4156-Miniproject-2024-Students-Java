@@ -19,6 +19,8 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/Course.ja
 
 6. isCourseFull() logic was backwards!  Updated to be functional.
 
+7. The enrolledStudentCount class variable should be 0 instead of 500.
+
 
 IndividualProject/src/main/java/dev/coms4156/project/individualproject/Department.java
 1. Missing @Override statement on toString() (PMD Rule: MissingOverride)
@@ -64,6 +66,8 @@ IndividualProject/src/main/java/dev/coms4156/project/individualproject/Individua
 2. Fixed wildcard import statements (CheckStyle Rule: AvoidStarImport)
 
 3. Reformatted all JavaDocs using Google Java code style rules
+
+4. Added "<p>" to class JavaDoc. (CheckStyle Rule: JavadocParagraph)
 
 
 IndividualProject/src/main/java/dev/coms4156/project/individualproject/MyFileDatabase.java

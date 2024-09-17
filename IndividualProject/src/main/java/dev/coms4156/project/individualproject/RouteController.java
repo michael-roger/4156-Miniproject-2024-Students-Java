@@ -285,7 +285,10 @@ public class RouteController {
         coursesMapping = departmentMapping.get(deptCode).getCourseSelection();
 
         Course requestedCourse = coursesMapping.get(Integer.toString(courseCode));
-        return new ResponseEntity<>("The course meets at: " + requestedCourse.getCourseTimeSlot(), HttpStatus.OK);
+        return new ResponseEntity<>(
+                "The course meets at: "
+                        + requestedCourse.getCourseTimeSlot(), HttpStatus.OK
+        );
       } else {
         return new ResponseEntity<>("Course Not Found", HttpStatus.NOT_FOUND);
       }
@@ -387,7 +390,7 @@ public class RouteController {
 
   /**
    * This method acts as a REST endpoint to allow the API user to
-   * update the enrollment count of a particular course
+   * update the enrollment count of a particular course.
    *
    * @param deptCode - The course's department code (String)
    * @param courseCode - The course code for which we want to change the enrollment count (int)
