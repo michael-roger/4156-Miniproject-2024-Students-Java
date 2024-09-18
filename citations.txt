@@ -17,3 +17,6 @@ https://stackoverflow.com/questions/75082629/failed-to-load-applicationcontext-f
 https://stackoverflow.com/questions/22836455/jacoco-report-generation-using-maven
 
 https://stackoverflow.com/questions/12132003/getting-cannot-find-symbol-in-java-project-in-intellij
+
+https://stackoverflow.com/questions/44776226/execution-data-for-class-does-not-match-jacoco
+

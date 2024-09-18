@@ -19,10 +19,7 @@ public class Department implements Serializable {
    * @param numberOfMajors The number of majors in the department.
    */
   public Department(
-      String deptCode,
-      Map<String, Course> courses,
-      String departmentChair,
-      int numberOfMajors) {
+      String deptCode, Map<String, Course> courses, String departmentChair, int numberOfMajors) {
     this.courses = courses;
     this.departmentChair = departmentChair;
     this.numberOfMajors = numberOfMajors;
@@ -119,8 +116,7 @@ public class Department implements Serializable {
     return result.toString();
   }
 
-  @Serial
-  private static final long serialVersionUID = 234567L;
+  @Serial private static final long serialVersionUID = 234567L;
   private final Map<String, Course> courses;
   private final String departmentChair;
   private final String deptCode;

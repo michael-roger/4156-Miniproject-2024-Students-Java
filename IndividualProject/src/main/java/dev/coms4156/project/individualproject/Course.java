@@ -4,9 +4,8 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * This class acts as an Object that represents a school course
- * Examples of information in this object include course location,
- * instructor name, and the number of enrolled students.
+ * This class acts as an Object that represents a school course Examples of information in this
+ * object include course location, instructor name, and the number of enrolled students.
  */
 public class Course implements Serializable {
 
@@ -23,7 +22,7 @@ public class Course implements Serializable {
     this.instructorName = instructorName;
     this.courseTimeSlot = timeSlot;
     this.enrollmentCapacity = capacity;
-    this.enrolledStudentCount = 500;
+    this.enrolledStudentCount = 0;
   }
 
   /**
@@ -32,7 +31,7 @@ public class Course implements Serializable {
    * @return true if the student is successfully enrolled, false otherwise.
    */
   public boolean enrollStudent() {
-    if (this.isCourseFull()) {
+    if (!this.isCourseFull()) {
       enrolledStudentCount++;
       return true;
     }
@@ -91,13 +90,24 @@ public class Course implements Serializable {
     this.enrolledStudentCount = count;
   }
 
+  public int getEnrolledStudentCount() {
+    return this.enrolledStudentCount;
+  }
+
+  public int setEnrollmentCapacity(int enrollmentCapacity) {
+    return this.enrollmentCapacity = enrollmentCapacity;
+  }
+
+  public int getEnrollmentCapacity() {
+    return this.enrollmentCapacity;
+  }
+
   public boolean isCourseFull() {
     return this.enrolledStudentCount >= this.enrollmentCapacity;
   }
 
-  @Serial
-  private static final long serialVersionUID = 123456L;
-  private final int enrollmentCapacity;
+  @Serial private static final long serialVersionUID = 123456L;
+  private int enrollmentCapacity;
   private int enrolledStudentCount;
   private String courseLocation;
   private String instructorName;
