@@ -4,9 +4,8 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * This class acts as an Object that represents a school course
- * Examples of information in this object include course location,
- * instructor name, and the number of enrolled students.
+ * This class acts as an Object that represents a school course Examples of information in this
+ * object include course location, instructor name, and the number of enrolled students.
  */
 public class Course implements Serializable {
 
@@ -107,8 +106,7 @@ public class Course implements Serializable {
     return this.enrolledStudentCount >= this.enrollmentCapacity;
   }
 
-  @Serial
-  private static final long serialVersionUID = 123456L;
+  @Serial private static final long serialVersionUID = 123456L;
   private int enrollmentCapacity;
   private int enrolledStudentCount;
   private String courseLocation;

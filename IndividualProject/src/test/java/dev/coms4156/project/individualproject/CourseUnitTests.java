@@ -1,13 +1,13 @@
 package dev.coms4156.project.individualproject;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * The unit tests for all methods in the Course.java class
@@ -18,18 +18,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ContextConfiguration
 public class CourseUnitTests {
 
+  /** Initializes the data for testing before each test runs. */
   @BeforeEach
   public void setupCourseForTesting() {
-    testCourse = new Course(
-            "Griffin Newbold",
-            "417 IAB",
-            "11:40-12:55",
-            250
-    );
+    testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
   }
 
   @Test
-  void initialEnrollmentTest() {
+  void instantiationPositivePath() {
     // Test initial values when the Course object is created
     assertEquals("Griffin Newbold", testCourse.getInstructorName());
     assertEquals("417 IAB", testCourse.getCourseLocation());
@@ -38,14 +34,14 @@ public class CourseUnitTests {
   }
 
   @Test
-  void enrollStudent_positivePath() {
+  void enrollStudentPositivePath() {
     boolean enrolled = testCourse.enrollStudent();
     assertTrue(enrolled);
     assertFalse(testCourse.isCourseFull());
   }
 
   @Test
-  void enrollStudent_testWhenFull() {
+  void enrollStudentWhenFull() {
     // Fill up the course by enrolling maximum students
     for (int i = 0; i < 250; i++) {
       testCourse.enrollStudent();
@@ -58,7 +54,7 @@ public class CourseUnitTests {
   }
 
   @Test
-  void dropStudent_testPositivePath() {
+  void dropStudentPositivePath() {
     // Enroll a student first
     testCourse.enrollStudent();
     assertEquals(1, testCourse.getEnrolledStudentCount());
@@ -70,7 +66,7 @@ public class CourseUnitTests {
   }
 
   @Test
-  void dropStudentWhenNoneEnrolled_dropWhenNoOneIsEnrolled() {
+  void dropStudentDropWhenNoOneIsEnrolled() {
     // Try to drop a student when no one is enrolled
     assertEquals(0, testCourse.getEnrolledStudentCount());
 
@@ -79,42 +75,42 @@ public class CourseUnitTests {
   }
 
   @Test
-  void reassignInstructor_changeTheInstructorName() {
+  void reassignInstructorChangeTheInstructorName() {
     // Test changing the instructor's name
     testCourse.reassignInstructor("Griffin Newbold");
     assertEquals("Griffin Newbold", testCourse.getInstructorName());
   }
 
   @Test
-  void reassignLocation_testChangingLocation() {
+  void reassignLocationChangingLocation() {
     // Test changing the course location
     testCourse.reassignLocation("417 IAB");
     assertEquals("417 IAB", testCourse.getCourseLocation());
   }
 
   @Test
-  void reassignTime_changingCourseTime() {
+  void reassignTimeChangingCourseTime() {
     // Test changing the course time
     testCourse.reassignTime("11:40-12:55");
     assertEquals("11:40-12:55", testCourse.getCourseTimeSlot());
   }
 
   @Test
-  void setEnrolledStudentCount_specificValue() {
+  void setEnrolledStudentCountSpecificValue() {
     // Test setting the enrolled student count to a specific value
     testCourse.setEnrolledStudentCount(25);
     assertEquals(25, testCourse.getEnrolledStudentCount());
   }
 
   @Test
-  void setEnrolledStudentCount_setCountToZero() {
+  void setEnrolledStudentCountSetCountToZero() {
     // Test setting the enrolled student count to zero
     testCourse.setEnrolledStudentCount(0);
     assertEquals(0, testCourse.getEnrolledStudentCount());
   }
 
   @Test
-  void setEnrolledStudentCount_setToMaximumCapacity() {
+  void setEnrolledStudentCountSetToMaximumCapacity() {
     // Test setting the enrolled student count to the maximum capacity
     testCourse.setEnrolledStudentCount(250);
     assertEquals(250, testCourse.getEnrolledStudentCount());
@@ -122,7 +118,7 @@ public class CourseUnitTests {
   }
 
   @Test
-  void setEnrolledStudentCount_setToExceedingCapacity() {
+  void setEnrolledStudentCountSetToExceedingCapacity() {
     // Test setting the enrolled student count exceeding the capacity
     testCourse.setEnrolledStudentCount(300);
     assertEquals(300, testCourse.getEnrolledStudentCount());
@@ -130,31 +126,31 @@ public class CourseUnitTests {
   }
 
   @Test
-  void setEnrollmentCapacity_testSpecificValue() {
+  void setEnrollmentCapacitySpecificValue() {
     // Test setting the enrollment capacity to a specific value
     int newCapacity = testCourse.setEnrollmentCapacity(100);
-    assertEquals(100, newCapacity);  // Check the returned value
-    assertEquals(100, testCourse.getEnrollmentCapacity());  // Check the internal state
+    assertEquals(100, newCapacity); // Check the returned value
+    assertEquals(100, testCourse.getEnrollmentCapacity()); // Check the internal state
   }
 
   @Test
-  void setEnrollmentCapacity_testSetToZero() {
+  void setEnrollmentCapacitySetToZero() {
     // Test setting the enrollment capacity to zero
     int newCapacity = testCourse.setEnrollmentCapacity(0);
-    assertEquals(0, newCapacity);  // Check the returned value
-    assertEquals(0, testCourse.getEnrollmentCapacity());  // Check the internal state
+    assertEquals(0, newCapacity); // Check the returned value
+    assertEquals(0, testCourse.getEnrollmentCapacity()); // Check the internal state
   }
 
   @Test
-  void setEnrollmentCapacity_testSetToNegativeValue() {
+  void setEnrollmentCapacitySetToNegativeValue() {
     // Test setting the enrollment capacity to a negative value
     int newCapacity = testCourse.setEnrollmentCapacity(-10);
-    assertEquals(-10, newCapacity);  // Check the returned value
-    assertEquals(-10, testCourse.getEnrollmentCapacity());  // Check the internal state
+    assertEquals(-10, newCapacity); // Check the returned value
+    assertEquals(-10, testCourse.getEnrollmentCapacity()); // Check the internal state
   }
 
   @Test
-  void getEnrollmentCapacity_testPositivePath() {
+  void getEnrollmentCapacityPositivePath() {
     // Test the initial enrollment capacity value
     assertEquals(250, testCourse.getEnrollmentCapacity());
 
@@ -164,7 +160,7 @@ public class CourseUnitTests {
   }
 
   @Test
-  public void toString_positivePath() {
+  public void toStringPositivePath() {
     String expectedResult = "\nInstructor: Griffin Newbold; Location: 417 IAB; Time: 11:40-12:55";
     assertEquals(expectedResult, testCourse.toString());
   }
